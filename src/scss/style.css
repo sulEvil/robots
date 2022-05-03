@@ -112,6 +112,19 @@ h6 {
   overflow: hidden;
   touch-action: none;
 }
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f9f9fd;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -203,5 +216,28 @@ h6 {
 	}
 }
 */
+.background_start {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 990px;
+  /*width: 550px;*/
+  /* width: 27.13vw; */
+  z-index: -1;
+}
+
+.background_static {
+  top: 990px;
+  position: absolute;
+  background-image: url(@img/background/background_static.svg);
+  background-repeat: no-repeat;
+  background-position-y: 0%;
+  background-position-x: 100%;
+  background-repeat-y: repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 550px;
+}
 
 /*# sourceMappingURL=style.css.map */
