@@ -1,17 +1,52 @@
 .menu{
   display: inline-block;
-  &__icon{
+  &__background {
     position: fixed;
-    right: calc(245px / 2.94);
+    z-index: 5;
+    right: calc((var(--mrigt) / 2.94));
     top: rem(40);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: rem(178);
+    height: rem(178);
+    background: #1f1f23;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.5s cubic-bezier(0.01, 1.05, 0.37, 0.99);
+
+  }
+  &_active{
+    .menu__background{
+      transition: 2.3s cubic-bezier(0.01, 1.05, 0.37, 0.99);
+      transform: scale(28);
+    }
+    .menu__burger span {
+      background: white;
+    }
+    .menu__burger:after{
+      background: white;
+    }
+    .menu__burger:before{
+      background: white;
+    }
+    .icon-menu__background{
+      width: 100%;
+      height: 100%;
+    }
+    .icon-menu__circle{
+      & span{
+        background: white;
+      }
+      .icon-menu__white{
+        opacity: 1;
+      }
+      .icon-menu__black{
+        opacity: 0;
+      }
+    }
   }
   &__burger{
     $this: &;
     position: absolute;
-    z-index: 2;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -51,15 +86,25 @@
       transition: all 0.4s ease
     }
   }
-  &__circle:hover + .menu__burger span{
+  .icon-menu__circle:hover + .menu__burger span{
     background: white;
   }
-  &__circle:hover + .menu__burger:after{
+  .icon-menu__circle:hover + .menu__burger:after{
     background: white;
   }
-  &__circle:hover + .menu__burger:before{
+  .icon-menu__circle:hover + .menu__burger:before{
     background: white;
   }
+
+}
+.icon-menu{
+  position: fixed;
+  z-index: 10;
+  right: calc((var(--mrigt) / 2.94));
+  top: rem(40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &__circle{
     width: rem(178);
     height: rem(178);
@@ -74,13 +119,13 @@
       & span{
         background: white;
       }
-      .menu__white{
+      .icon-menu__white{
         opacity: 1;
       }
-      .menu__black{
+      .icon-menu__black{
         opacity: 0;
       }
-      .menu__background{
+      .icon-menu__background{
         width: 100%;
         height: 100%;
       }
