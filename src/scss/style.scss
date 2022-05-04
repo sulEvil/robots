@@ -125,9 +125,10 @@ body::-webkit-scrollbar-thumb {
 			width: calc(100% - (var(--mrigt) + var(--mleft)));
 			margin-right: var(--mrigt);
 			margin-left: var(--mleft);
+
 		}
 		@if ($containerPadding>0) {
-			padding: 0 rem(math.div($containerPadding, 2));
+			padding: rem(120) rem(math.div($containerPadding, 2));
 		}
 	}
 } @else {
