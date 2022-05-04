@@ -1,0 +1,53 @@
+.nav__inner {
+  position: fixed;
+  left: rem(32);
+  top: rem(40);
+
+}
+.nav__item {
+  position: relative;
+  margin-right: 0;
+  margin-bottom: 18px;
+  width: 72px;
+  height: 72px;
+  display: block;
+}
+.nav__icon {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 2px solid #F8F8F8;
+  border-radius: 50%;
+  &:hover{
+    width: 72px;
+    height: 72px;
+    font-size: rem(17);
+    border: 2px solid #e3e3e3;
+  }
+}
+.nav__icon_call{
+  border: 2px solid $mainBlueColor;
+  font-size: rem(25);
+  &:hover{
+    border: 2px solid $mainBlueColor;
+    font-size: rem(23);
+  }
+  &:before{
+
+    font-weight: 500;
+    color: #02D4E1;
+  }
+}
+
+
+
+
+

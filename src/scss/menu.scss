@@ -1,0 +1,128 @@
+.menu{
+  display: inline-block;
+  &__icon{
+    position: fixed;
+    right: calc(245px / 2.94);
+    top: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__burger{
+    $this: &;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(55);
+    padding: rem(15) 0;
+    & span {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      background: black;
+      height: rem(3);
+      transition: all 0.4s ease
+    }
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: rem(3);
+      background: black;
+      transition: all 0.4s ease
+    }
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: rem(3);
+      background: black;
+      transition: all 0.4s ease
+    }
+  }
+  &__circle:hover + .menu__burger span{
+    background: white;
+  }
+  &__circle:hover + .menu__burger:after{
+    background: white;
+  }
+  &__circle:hover + .menu__burger:before{
+    background: white;
+  }
+  &__circle{
+    width: rem(178);
+    height: rem(178);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover{
+      & span{
+        background: white;
+      }
+      .menu__white{
+        opacity: 1;
+      }
+      .menu__black{
+        opacity: 0;
+      }
+      .menu__background{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__background{
+    position: absolute;
+    background-color: #1f1f23;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+  }
+  &__black{
+    position: absolute;
+    width: rem(130);
+    height: rem(130);
+    background: center / contain no-repeat url("@img/menu/menu_circle.svg");
+    animation: circle 15s infinite linear;
+    transition: all 0.1s ease;
+  }
+  &__white{
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: center / contain no-repeat url("@img/menu/menu_circle_white.svg");
+    animation: circle 15s infinite linear;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    opacity: 0;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -12,6 +12,7 @@
 	&:before {
 		@extend %ic;
 		display: block;
+		font-family: 'icons';
 	}
 }
 ._icon-call:before {
