@@ -1,5 +1,5 @@
 .menu{
-  display: inline-block;
+  position: relative;
   &__background {
     position: fixed;
     z-index: 5;
@@ -11,7 +11,8 @@
     border-radius: 50%;
     transform: scale(0);
     transition: 0.5s cubic-bezier(0.01, 1.05, 0.37, 0.99);
-
+  }
+  &__body{
   }
   &_active{
     .menu__background{
@@ -86,20 +87,183 @@
       transition: all 0.4s ease
     }
   }
-  .icon-menu__circle:hover + .menu__burger span{
+  .icon-menu__circle:hover + .menu__burger span, .icon-menu__circle:hover + .menu__burger:after, .icon-menu__circle:hover + .menu__burger:before{
     background: white;
   }
-  .icon-menu__circle:hover + .menu__burger:after{
-    background: white;
+  &__container{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+    color: white;
+    gap: rem(60);
   }
-  .icon-menu__circle:hover + .menu__burger:before{
-    background: white;
+  &__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
+  &__nav{
+    display: flex;
+    flex-direction: column;
+    gap: rem(36);
+  }
+  &__link{
+    position: relative;
+    font-size: rem(60);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+   &:after{
+     content: '';
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     left: 110%;
+     width: rem(0);
+     height: rem(2);
+     transition: all 0.3s ease;
+     background: $mainBlueColor;
+   }
+    &:hover{
+      &:after{
+        width: rem(50);
+      }
+    }
+    &:hover{
+      color: $mainBlueColor;
+    }
+  }
+  &__work{
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  &__work-link{
+    position: relative;
+    font-size: rem(36);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    &:after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 110%;
+      width: rem(0);
+      height: rem(2);
+      transition: all 0.3s ease;
+      background: $mainBlueColor;
+    }
+    &:hover{
+      &:after{
+        width: rem(100);
+      }
+    }
+    &:hover{
+      color: $mainBlueColor;
+    }
+  }
+  &__right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+  }
+  &__data{
+    display: flex;
+   // display: none;
+    flex-direction: column;
+    gap: rem(200);
+    transition: all 0.3s ease;
+    opacity: 1;
+  }
+  &__socials{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(25);
+  }
+  &__social{
+    width: rem(82);
+    height: rem(82);
+  }
+  &__social-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(79);
+    height: rem(79);
+    border-radius: 50%;
+    border: white 2px solid;
+    transition: all 0.3s ease;
+    &:hover{
+      width: rem(86);
+      height: rem(86);
+    }
+  }
+  &__info-block{
+    text-align: end;
+  }
+  &__geo{
+    font-size: rem(25);
+    font-weight: bold;
+    margin-bottom: rem(40);
+  }
+  &__more-info{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: rem(40);
+    font-weight: 500;
+    line-height: rem(28);
+  }
+  &__path{
+
+  }
+  &__path-link{
+    display: inline;
+    color: white;
+    text-decoration: underline!important;
+    &:hover{
+      text-decoration: none!important;
+    }
+  }
+  &__item-open{
+
+  }
+  &__item-list{
+    display: flex;
+    flex-direction: column;
+    gap: rem(36);
+  }
+  &__subitem{
+
+  }
+  &__subitem-link{
+    font-size: rem(25);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    &:hover{
+      color: $mainBlueColor;
+    }
+
+  }
+
+
+
 
 }
 .icon-menu{
   position: fixed;
-  z-index: 10;
+  z-index: 11;
   right: calc((var(--mrigt) / 2.94));
   top: rem(40);
   display: flex;
