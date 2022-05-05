@@ -4,6 +4,15 @@
   top: rem(40);
 
 }
+.nav__body{
+  position: absolute;
+  z-index: 10;
+  height: 100vh;
+  left: 0;
+  width: 0;
+  background-color: #f2f7f7;
+  transition: all 0.3s ease;
+}
 .nav__item {
   position: relative;
   margin-right: 0;

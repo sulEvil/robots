@@ -8,7 +8,6 @@ document.addEventListener('click', function(event){
     if(event.target.closest('.icon-menu')){
         document.querySelector('html').classList.toggle('lock');
         document.querySelector('.menu').classList.toggle('menu_active');
-        console.log(getComputedStyle(menu).bottom)
         if(getComputedStyle(menu).bottom == '0px'){
             menu.style.bottom = '100%';
             menu.style.paddingTop = '0';
@@ -18,10 +17,15 @@ document.addEventListener('click', function(event){
             menu.style.paddingTop = '100px';
             menu.style.paddingBottom = '80px';
         }
-
     }
     if(event.target.closest('.menu__item_inside')){
     }
+    if(event.target.closest('.nav__item_callback')){
+        document.querySelector('.nav__body').style.width = '33%';
+    }else{
+        document.querySelector('.nav__body').style.width = '0';
+    }
+
 
 
 })
