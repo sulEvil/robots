@@ -271,6 +271,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
   &__circle{
     width: rem(178);
     height: rem(178);
@@ -290,6 +291,7 @@
       }
       .icon-menu__black{
         opacity: 0;
+        background: transparent;
       }
       .icon-menu__background{
         width: 100%;

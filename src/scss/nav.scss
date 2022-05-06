@@ -4,14 +4,21 @@
   top: rem(40);
 
 }
+.nav_active .nav__body{
+  transform: translateX(0vw);
+}
 .nav__body{
-  position: absolute;
+  position: fixed;
   z-index: 10;
-  height: 100vh;
+  min-height: 100vh;
   left: 0;
-  width: 0;
+  width: rem(706);
+  transform: translateX(-100vw);
   background-color: #f2f7f7;
-  transition: all 0.3s ease;
+  transition-property: all;
+  transition-duration: 0.6s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 .nav__item {
   position: relative;
@@ -50,9 +57,79 @@
     font-size: rem(23);
   }
   &:before{
-
     font-weight: 500;
     color: #02D4E1;
+  }
+}
+.nav-body{
+  &__wrapper{
+    padding-left: rem(33);
+    padding-right: rem(33);
+    padding-bottom: rem(60);
+    padding-top: rem(80);
+  }
+  &__content{
+    width: 62%;
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(60);
+  }
+  &__title{
+    font-size: rem(60);
+    font-weight: bold;
+    line-height: 60px;
+    text-transform: uppercase;
+  }
+  &__close{
+    position: relative;
+    width: rem(41);
+    height: rem(41);
+    cursor: pointer;
+    align-self: flex-start;
+    &:hover{
+      .nav-body__close_item:first-child{
+        width: 120%;
+      }
+      .nav-body__close_item:last-child{
+        width: 120%;
+      }
+    }
+    &_item{
+      position: absolute;
+      width: 100%;
+      height: rem(3);
+      background: black;
+      top: 50%;
+      left: 50%;
+      transition: 0.15s all ease;
+      &:first-child{
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:last-child{
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    gap: rem(50);
+  }
+  &__politic{
+    margin-top: rem(80);
+    width: 90%;
+    color: rgba(133, 156, 160, 0.5);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.7;
+    &_link{
+      text-decoration: underline!important;
+      &:hover{
+        text-decoration: none!important;
+      }
+    }
   }
 }
 

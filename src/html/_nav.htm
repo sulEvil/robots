@@ -1,12 +1,53 @@
 <nav class="nav">
-    <div class="nav__body">
+    <div class="nav__body nav-body">
+        <div class="nav-body__wrapper">
+            <div class="nav-body__header">
+                <div class="nav-body__title">
+                    <span class="text_blue">Обратный</span><br> звонок
+                </div>
+                <div class="nav-body__close">
+                    <div class="nav-body__close_item"></div>
+                    <div class="nav-body__close_item"></div>
+                </div>
+            </div>
+            <div class="nav-body__content">
+                <form class="nav-body__form">
+                    <label class="input__text">
+                        <input class="input__callback" type="text" name="NAME">
+                        <span class="input__placeholder">Ваше имя</span>
+                    </label>
+                    <label class="input__text input__tel">
+                        <input class="input__callback input__callback_tel" type="tel" name="TELEPHONE">
+                        <span class="input__placeholder">Ваш телефон</span>
+                    </label>
+                    <label class="input__text">
+                        <input class="input__callback" type="text" name="QUESTION">
+                        <span class="input__placeholder">Ваш вопрос</span>
+                    </label>
+                    <button type="submit" class="btn">
+                        <div class="arrow">
+                            <div class="arrow__arrow">
+                            </div>
+                            <div class="arrow__circle arrow__circle_white"></div>
+                        </div>
+                        <span>перезвоните мне</span>
+                    </button>
+                    <div class="nav-body__politic">
+                        нажимая на кнопку
+                        <a href="#" class="nav-body__politic_link">
+                            вы соглашаетесь с политикой обработки персональных данных
+                        </a>
+                    </div>
+                </form>
+            </div>
 
+        </div>
     </div>
     <div class="nav__inner">
-        <a href="#" class="nav__item nav__item_callback">
+        <button href="#" class="nav__item nav__item_callback">
             <div class="nav__icon nav__icon_call _icon-call">
             </div>
-        </a>
+        </button>
         <a href="#" class="nav__item">
             <div class="nav__icon _icon-facebook">
             </div>

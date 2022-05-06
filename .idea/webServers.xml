@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2347981e-977f-4c21-9eed-0f0d6e2a6d61" name="rgc" url="http://185.146.2.237">
+        <fileTransfer host="185.146.2.237" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="2543c829-0274-4679-a186-0ceefdfcc588" name="robots" url="http://92.53.96.174">
+        <fileTransfer host="92.53.96.174" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

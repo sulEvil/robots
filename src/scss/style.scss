@@ -123,8 +123,8 @@ body::-webkit-scrollbar-thumb {
 			box-sizing: content-box;
 			// margin: 0 auto;
 			width: calc(100% - (var(--mrigt) + var(--mleft)));
-			margin-right: var(--mrigt);
-			margin-left: var(--mleft);
+			padding-right: var(--mrigt)!important;
+			padding-left: var(--mleft) !important;
 
 		}
 		@if ($containerPadding>0) {
@@ -164,6 +164,10 @@ body::-webkit-scrollbar-thumb {
 
 // Подключение стилей общих элементов проекта
 @import "common";
+@import "text";
+@import "input";
+@import "btn";
+
 
 // Подключение стилей отдельных блоков
 @import "header";
