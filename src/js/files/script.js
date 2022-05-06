@@ -28,9 +28,13 @@ function closeNav(){
 }
 document.addEventListener('click', function(event){
     if(event.target.closest('.icon-menu')){
-        if(document.querySelector('html').classList.contains('lock')){
+        if(document.querySelector('html').classList.contains('lock') && document.querySelector('.nav').classList.contains('nav_active')){
+            closeNav();
+            openMenu();
+        }else if(document.querySelector('html').classList.contains('lock')){
             reset();
         } else {
+            closeNav();
             openMenu();
         }
     }
