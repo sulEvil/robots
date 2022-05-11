@@ -1,0 +1,48 @@
+.about{
+  &__container{
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+  }
+  &__describe{
+    flex-basis: 50%;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 78px;
+    line-height: 92px;
+    color: #303030;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    span{
+      color: #8EE1E7;
+      font-size: 62px;
+      line-height: 73px;
+    }
+  }
+  &__feature{
+    position: relative;
+    padding-left: 47px;
+    margin-bottom: 24px;
+    &:before{
+      content: '';
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: black;
+      position: absolute;
+      left: 0;
+      top: 12px;
+    }
+  }
+  &__swiper{
+    width: 643px;
+    height: 500px;
+  }
+  &__subtitle{
+    color: #000000;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+}

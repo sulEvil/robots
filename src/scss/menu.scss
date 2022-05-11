@@ -1,5 +1,6 @@
 .menu{
   position: relative;
+  z-index: 100;
   &__background {
     position: fixed;
     z-index: 5;
@@ -207,8 +208,7 @@
     border: white 2px solid;
     transition: all 0.3s ease;
     &:hover{
-      width: rem(86);
-      height: rem(86);
+      transform: scale(1.1);
     }
   }
   &__info-block{
