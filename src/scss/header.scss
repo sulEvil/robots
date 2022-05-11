@@ -1,6 +1,7 @@
 //====================================================================================================
 
 .header{
+  margin-bottom: rem(40);
   &__container{
     @media (max-width: $preTablet){
       margin-right: 20px;
@@ -11,12 +12,21 @@
     justify-content: space-between;
     margin-bottom: 56px;
   }
+  &__logo{
+    cursor: pointer;
+  }
   &__nav{
     display: flex;
     justify-content: space-between;
   }
   &__tel{
     font-size: rem(36);
+    transition: 0.3s ease all;
+    cursor: pointer;
+    align-self: flex-start;
+    &:hover{
+      transform: scale(1.1);
+    }
   }
   &__link{
     text-transform: uppercase;
