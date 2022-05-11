@@ -60,7 +60,7 @@ body {
 	--mleft: 223px;
 	--mheader: 60px;
 	@media (max-width: $preTablet){
-		--mrigt: 245px;
+		--mrigt: 275px;
 		--mleft: 155px;
 		--mheader: 60px;
 	}
@@ -128,7 +128,10 @@ body::-webkit-scrollbar-thumb {
 
 		}
 		@if ($containerPadding>0) {
-			padding: rem(120) rem(math.div($containerPadding, 2));
+			padding-top: rem(45);
+			padding-bottom: rem(45);
+			padding-right: var(--mrigt)!important;
+			padding-left: var(--mleft) !important;
 		}
 	}
 } @else {

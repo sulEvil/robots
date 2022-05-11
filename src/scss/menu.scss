@@ -3,7 +3,7 @@
   &__background {
     position: fixed;
     z-index: 5;
-    right: calc((var(--mrigt) / 2.94));
+    right: calc((var(--mrigt) / 3.05));
     top: rem(40);
     width: rem(178);
     height: rem(178);
@@ -11,6 +11,7 @@
     border-radius: 50%;
     transform: scale(0);
     transition: 0.5s cubic-bezier(0.01, 1.05, 0.37, 0.99);
+
   }
   &__body{
   }
@@ -266,12 +267,15 @@
 .icon-menu{
   position: fixed;
   z-index: 11;
-  right: calc((var(--mrigt) / 2.94));
+  right: calc((var(--mrigt) / 3));
   top: rem(40);
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
+  @media (max-width: $preTablet){
+    right: 4%;
+  }
   &__circle{
     width: rem(178);
     height: rem(178);

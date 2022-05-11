@@ -1,5 +1,31 @@
 //====================================================================================================
 
+.header{
+  &__container{
+    @media (max-width: $preTablet){
+      margin-right: 20px;
+    }
+  }
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 56px;
+  }
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__tel{
+    font-size: rem(36);
+  }
+  &__link{
+    text-transform: uppercase;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
 //====================================================================================================
 
 //Burger
