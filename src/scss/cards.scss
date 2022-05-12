@@ -1,0 +1,41 @@
+.cards{
+  width: 530px;
+  height: 450px;
+  &__wrapper{
+    width: 530px;
+    height: 100%;
+    position: relative;
+  }
+  &__card{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 530px;
+    height: 450px;
+    background: #DFF9FD;
+    img{
+      opacity: 0;
+    }
+    &:nth-child(1){
+      transform: translate(80px, 80px);
+      z-index: 11;
+      background: #D2E4E7;
+      img{
+        opacity: 1;
+      }
+    }
+    &:nth-child(2){
+      transform: translate(40px, 40px);
+      z-index: 10;
+      background: #D2E4E7;
+      img{
+        opacity: 0.33;
+      }
+    }
+  }
+  &__img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

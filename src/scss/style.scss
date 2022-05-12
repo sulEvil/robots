@@ -57,7 +57,7 @@ $responsiveType: 1;
 
 body {
 	--mrigt: 387px;
-	--mleft: 223px;
+	--mleft: 155px;
 	--mheader: 60px;
 	@media (max-width: $preTablet){
 		--mrigt: 275px;
@@ -170,7 +170,7 @@ body::-webkit-scrollbar-thumb {
 @import "text";
 @import "input";
 @import "btn";
-
+@import "cards";
 
 // Подключение стилей отдельных блоков
 @import "header";
@@ -181,6 +181,11 @@ body::-webkit-scrollbar-thumb {
 @import "product";
 @import "main-catalog";
 @import "about";
+@import "case";
+@import "present";
+@import "videos";
+@import "news";
+@import "feedback";
 
 // Подключение стилей отдельных страниц
 @import "home";

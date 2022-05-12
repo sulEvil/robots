@@ -1,3 +1,108 @@
 //====================================================================================================
+.footer{
+  &__inner{
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  &__inner-bottom{
+    flex-direction: column;
+  }
+  &__top{
+    display: flex;
+    align-items: center;
+  }
+  &__bottom{
+    background: #D2E4E7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Tahoma';
+    font-style: normal;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #303030;
+  }
+  &__link{
+    color: #8EE1E7;
+  }
+  &__line{
+    width: 140px;
+    height: 3px;
+    background: #8EE1E7;
+    border-radius: 1px;
+  }
+  &__nickname{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 41px;
+    text-transform: uppercase;
+    color: #303030;
+    margin-left: auto;
+  }
+  &__nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__menu{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  &__menu-title{
+    font-weight: 700;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  &__robots{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__robot{
+    text-transform: uppercase;
+  }
+  &__feedback{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__number{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    color: #035C62;
+  }
+  &__socials {
+    align-self: flex-end;
+    display: flex;
+    gap: 11px;
+    align-items: center;
+  }
+  &__social{
+    transition: 0.3s ease all;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+  &__logo{
+    margin-bottom: 30px;
+  }
 
+}
 //====================================================================================================

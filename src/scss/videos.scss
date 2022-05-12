@@ -1,0 +1,35 @@
+.videos{
+  &__container{
+    gap: 27px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title{
+    font-weight: bold;
+    color: #303030;
+    font-size: 78px;
+    line-height: 92px;
+    span{
+      font-size: 72px;
+      color: #8EE1E7;
+      line-height: 85px;
+    }
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    row-gap: 95px;
+  }
+  &__video{
+    transition: 0.3s all ease;
+    img{
+      width: 250px;
+      height: 250px;
+    }
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+}

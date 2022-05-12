@@ -1,0 +1,84 @@
+.feedback{
+  background: #EAF4F5;
+  margin-top: 75px;
+  &__container{
+
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  &__title{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 78px;
+    line-height: 92px;
+    color: #303030;
+    margin-bottom: 8px;
+    span{
+      font-size: 72px;
+      line-height: 85px;
+      color: #FFFFFF;
+      text-shadow: 0px 0px 1px #000000;
+    }
+  }
+  &__describtion{
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+  }
+  &__form-block{
+    position: relative;
+  }
+  &__form-background{
+    position: absolute;
+    z-index: 1;
+    top: -21px;
+    bottom: -20px;
+    right: -22px;
+    left: 42px;
+    background: #8EE1E7;
+  }
+  &__form{
+    position: relative;
+    z-index: 2;
+    background: #D2E4E7;
+    display: flex;
+    flex-direction: column;
+    padding: 44px 85px 75px 85px;
+  }
+  &__input-text{
+    line-height: 21px;
+    color: #7E7A7A;
+    padding: 20px 25px 20px 10px;
+    min-width: 300px;
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+  }
+  &__btn{
+    margin-bottom: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    color: #FFFFFF;
+    font-family: 'Arial';
+    font-style: normal;
+    padding: 20px 20px;
+    text-align: center;
+    background: #02D4E1;
+    width: 100%;
+  }
+  &__label{
+    display: flex;
+    gap: 4px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #777777;
+    cursor: pointer;
+  }
+
+}
