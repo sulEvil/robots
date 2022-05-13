@@ -2,7 +2,7 @@
   position: fixed;
   left: rem(32);
   top: rem(40);
-
+  z-index: 10;
 }
 .nav_active .nav__body{
   transform: translateX(0vw);
@@ -52,6 +52,7 @@
 .nav__icon_call{
   border: 2px solid $mainBlueColor;
   font-size: rem(25);
+  z-index: 1111111;
   &:hover{
     border: 2px solid $mainBlueColor;
     font-size: rem(23);

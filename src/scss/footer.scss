@@ -103,6 +103,12 @@
   &__logo{
     margin-bottom: 30px;
   }
-
+  &__icon-top{
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
 }
 //====================================================================================================

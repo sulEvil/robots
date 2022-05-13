@@ -2,8 +2,26 @@
   padding: 118px 0 140px;
   &__more {
     align-self: flex-start;
+    position: relative;
+    z-index: 10;
+  }
+  &__container{
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 75%;
+      height: 10px;
+      border-radius: 50%;
+      left: 0;
+      bottom: -50px;
+      box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3);
+    }
   }
   &__inner{
+    transform-style: preserve-3d;
     border: 15px solid #8EE1E7;
     position: relative;
     display: flex;
@@ -12,17 +30,25 @@
     justify-content: center;
     padding: 100px 170px 65px 146px;
     gap: 12px;
+    transition: 0.3s ease all;
   }
   &__text{
     font-size: 24px;
     line-height: 150%;
     color: #000000;
     text-transform: uppercase;
+    transform: translateZ(0px);
   }
   &__icon{
     position: absolute;
     right: 45px;
     bottom: 0;
     transform: translateY(50%);
+  }
+  & .btn {
+    transform: translateZ(10px);
+    &:hover{
+      text-decoration: underline;
+    }
   }
 }

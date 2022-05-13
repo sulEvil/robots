@@ -12,9 +12,6 @@
     border-radius: 50%;
     transform: scale(0);
     transition: 0.5s cubic-bezier(0.01, 1.05, 0.37, 0.99);
-
-  }
-  &__body{
   }
   &_active{
     .menu__background{
@@ -49,7 +46,6 @@
   &__burger{
     $this: &;
     position: absolute;
-
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -116,6 +112,15 @@
     flex-direction: column;
     gap: rem(36);
   }
+  &__item{
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+  }
+  &__item-vis{
+    opacity: 1;
+    transform: translateY(0px);
+  }
   &__link{
     position: relative;
     font-size: rem(60);
@@ -147,6 +152,13 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+  }
+  &__work-vis{
+    opacity: 1;
+    transform: translateY(0px);
   }
   &__work-link{
     position: relative;
@@ -182,7 +194,6 @@
   }
   &__data{
     display: flex;
-   // display: none;
     flex-direction: column;
     gap: rem(200);
     transition: all 0.3s ease;
@@ -197,6 +208,13 @@
   &__social{
     width: rem(82);
     height: rem(82);
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translateY(15px);
+  }
+  &__social-vis{
+    opacity: 1;
+    transform: translateY(0px);
   }
   &__social-link{
     display: flex;
@@ -213,6 +231,13 @@
   }
   &__info-block{
     text-align: end;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+  }
+  &__info-block-vis{
+    opacity: 1;
+    transform: translateY(0px);
   }
   &__geo{
     font-size: rem(25);
@@ -226,9 +251,6 @@
     gap: rem(40);
     font-weight: 500;
     line-height: rem(28);
-  }
-  &__path{
-
   }
   &__path-link{
     display: inline;
@@ -246,9 +268,6 @@
     flex-direction: column;
     gap: rem(36);
   }
-  &__subitem{
-
-  }
   &__subitem-link{
     font-size: rem(25);
     font-weight: bold;
@@ -257,12 +276,7 @@
     &:hover{
       color: $mainBlueColor;
     }
-
   }
-
-
-
-
 }
 .icon-menu{
   position: fixed;

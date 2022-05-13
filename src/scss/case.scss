@@ -1,13 +1,14 @@
 .case{
   &__container{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 120px;
   }
   &__swiper{
   }
   &__content{
     display: flex;
+    height: 500px;
     flex-direction: column;
   }
   &__title{
@@ -27,8 +28,25 @@
     margin-top: auto;
     display: flex;
     gap: 65px;
+    justify-self: flex-end;
   }
   &__left{
     transform: rotate(180deg);
+  }
+  &__description{
+    position: relative;
+  }
+  &__desc_text{
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    font-size: 24px;
+  }
+  &__desc_active{
+    position: static;
+    display: inline;
+    transition: all 0.1s ease;
+    opacity: 1;
   }
 }

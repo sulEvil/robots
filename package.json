@@ -71,6 +71,7 @@
 	},
 	"dependencies": {
 		"g": "^2.0.1",
-		"simplebar": "latest"
+		"simplebar": "latest",
+		"tilt.js": "^1.2.1"
 	}
 }

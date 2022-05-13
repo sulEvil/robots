@@ -2,7 +2,68 @@
 import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
+document.addEventListener('DOMContentLoaded', function (event) {
+    document.querySelectorAll('.input__callback').forEach(function(input){
+        input.addEventListener('change', function (e) {
+            if(input.value){
+                input.parentNode.classList.add('notEmpty');
+
+            } else{
+                input.parentNode.classList.remove('notEmpty');
+            }
+        })
+    })
+}) // DOMContentLoaded EEEEEEEEEEEEEEENNNNNNNNNNNNNNNNNNNNDDDDDDDDDDDDDDDDDDDDDD
 const menu = document.querySelector('.menu__container');
+let card = document.querySelector('.present__container');
+function appearMenu() {
+    let menuItems = document.querySelectorAll('.menu__item');
+    let worksItems = document.querySelectorAll('.menu__work-item');
+    let socials = document.querySelectorAll('.menu__social');
+    let infoBlock = document.querySelector('.menu__info-block');
+    menu.style.bottom = '0';
+    menu.style.paddingTop = '100px';
+    menu.style.paddingBottom = '80px';
+    menuItems.forEach((item, index) => {
+        setTimeout(function(){
+            item.classList.add('menu__item-vis');
+        }, index * 100);
+    });
+    worksItems.forEach((item, index) => {
+        setTimeout(function(){
+            item.classList.add('menu__work-vis');
+        }, index * 100);
+    });
+    socials.forEach((item, index) => {
+        setTimeout(function(){
+            item.classList.add('menu__social-vis');
+        }, index * 100);
+    });
+    setTimeout(function(){
+        infoBlock.classList.add('menu__info-block-vis')
+    }, 100);
+}
+function unAppearMenu() {
+    let menuItems = document.querySelectorAll('.menu__item');
+    let worksItems = document.querySelectorAll('.menu__work-item');
+    let socials = document.querySelectorAll('.menu__social');
+    let infoBlock = document.querySelector('.menu__info-block');
+    menu.style.bottom = '100%';
+    menu.style.paddingTop = '0';
+    menu.style.paddingBottom = '0';
+    menuItems.forEach((item, index) => {
+        item.classList.remove('menu__item-vis');
+    });
+    worksItems.forEach((item, index) => {
+        item.classList.remove('menu__work-vis');
+    });
+    socials.forEach((item, index) => {
+        item.classList.remove('menu__social-vis');
+    });
+    setTimeout(function(){
+        infoBlock.classList.remove('menu__info-block-vis')
+    }, 100);
+}
 function openNav(){
     document.querySelector('.nav').classList.add('nav_active');
     document.querySelector('html').classList.add('lock');
@@ -10,21 +71,82 @@ function openNav(){
 function openMenu(){
     document.querySelector('html').classList.add('lock');
     document.querySelector('.menu').classList.add('menu_active');
-    menu.style.bottom = '0';
-    menu.style.paddingTop = '100px';
-    menu.style.paddingBottom = '80px';
+    setTimeout(appearMenu, 500);
 }
 function reset(){
     document.querySelector('html').classList.remove('lock');
     document.querySelector('.menu').classList.remove('menu_active');
     document.querySelector('.nav').classList.remove('nav_active');
-    menu.style.bottom = '100%';
-    menu.style.paddingTop = '0';
-    menu.style.paddingBottom = '0';
+    unAppearMenu();
+
 }
 function closeNav(){
     document.querySelector('.nav').classList.remove('nav_active');
     document.querySelector('html').classList.remove('lock');
+}
+function nextSlide(className, idName){
+    let aboutSlide = document.getElementsByClassName(className);
+    for (let i = 0; i < aboutSlide.length; i++) {
+        /*Se è la prima immagine, diventa l'ultima*/
+        if (aboutSlide[i].id == `${idName}-1`) {
+            aboutSlide[i].id = `${idName}-${aboutSlide.length}`;
+        } else {
+            /*Se non è la prima immagine...*/
+            let eid = aboutSlide[i].id;
+            let strnum = eid.match(/\d+$/)[0];
+            let num = parseInt(strnum);
+            /*...scorre indietro di uno*/
+            strnum--;
+            aboutSlide[i].id = `${idName}-` + strnum;
+        }
+    }
+}
+function prevSlide(className, idName){
+    let aboutSlide = document.getElementsByClassName(className);
+    for (let i = 0; i < aboutSlide.length; i++) {
+        /*Se è la prima immagine, diventa l'ultima*/
+        if (aboutSlide[i].id == `${idName}-${aboutSlide.length}`) {
+            aboutSlide[i].id = `${idName}-1`;
+        } else {
+            /*Se non è la prima immagine...*/
+            let eid = aboutSlide[i].id;
+            let strnum = eid.match(/\d+$/)[0];
+            let num = parseInt(strnum);
+            /*...scorre indietro di uno*/
+            strnum++;
+            aboutSlide[i].id = `${idName}-` + strnum;
+        }
+    }
+}
+function nextText(className, classActive){
+    let texts = document.getElementsByClassName(className);
+    for (let i = 0; i < texts.length; i++) {
+        if(i == texts.length - 1){
+            texts[i].classList.remove(classActive);
+            texts[0].classList.add(classActive);
+            break;
+        }
+        if(texts[i].classList.contains(classActive)){
+            texts[i].classList.remove(classActive);
+            texts[i + 1].classList.add(classActive);
+            break;
+        }
+    }
+}
+function prevText(className, classActive){
+    let texts = document.getElementsByClassName(className);
+    for (let i =  texts.length - 1; i >= 0; i--) {
+        if(i == 0){
+            texts[0].classList.remove(classActive);
+            texts[texts.length - 1].classList.add(classActive);
+            break;
+        }
+        if(texts[i].classList.contains(classActive)){
+            texts[i].classList.remove(classActive);
+            texts[i - 1].classList.add(classActive);
+            break;
+        }
+    }
 }
 document.addEventListener('click', function(event){
     if(event.target.closest('.icon-menu')){
@@ -37,8 +159,6 @@ document.addEventListener('click', function(event){
             closeNav();
             openMenu();
         }
-    }
-    if(event.target.closest('.menu__item_inside')){
     }
     if(document.querySelector('.nav').classList.contains('nav_active') && !event.target.closest('.nav__body')){
         document.querySelector('.nav').classList.remove('nav_active');
@@ -60,12 +180,31 @@ document.addEventListener('click', function(event){
     if(event.target.closest('#slide-right')){
         mySlideLeft();
     }
-
-
-})
-document.addEventListener('mousemove', function(event){
-    if(event.target.closest('.menu__link_inside[data-id]')){
-        console.log('Поймал')
+    if(event.target.closest('#about-card-1')){
+        nextSlide("about__card", "about-card");
+    }
+    if(event.target.closest('#case__card-1')){
+        nextSlide("case__card", "case__card");
+        nextText('case__desc_text', 'case__desc_active');
+    }
+    if(event.target.closest('#news-card-1')){
+        nextSlide("news__card", "news-card");
+    }
+    if(event.target.closest('.case__left')){
+        prevSlide("case__card", "case__card");
+        prevText('case__desc_text', 'case__desc_active');
+    }
+    if(event.target.closest('.case__right')){
+        nextSlide("case__card", "case__card");
+        nextText('case__desc_text', 'case__desc_active');
+    }
+    if(event.target.closest('.news__left')){
+        prevSlide("news__card", "news-card");
+        prevText('news__info', 'news__info_active');
+    }
+    if(event.target.closest('.news__right')){
+        nextSlide("news__card", "news-card");
+        nextText('news__info', 'news__info_active');
     }
 })
 document.addEventListener('keydown',function(event) {
@@ -79,19 +218,6 @@ document.addEventListener('keydown',function(event) {
         menu.style.paddingBottom = '0';
     }
 });
-document.addEventListener('DOMContentLoaded', function (event) {
-    document.querySelectorAll('.input__callback').forEach(function(input){
-        input.addEventListener('change', function (e) {
-            if(input.value){
-                input.parentNode.classList.add('notEmpty');
-
-            } else{
-                input.parentNode.classList.remove('notEmpty');
-            }
-        })
-    })
-}) // DOMContentLoaded EEEEEEEEEEEEEEENNNNNNNNNNNNNNNNNNNNDDDDDDDDDDDDDDDDDDDDDD
-
 function carousel () {
     (function (d) {
         /*  FUNZIONE EVENTI SWIPE DESTRA SINISTRA SU GIU'*/
@@ -219,5 +345,4 @@ document.querySelectorAll('.cont-slider').forEach(slide => {
         selectSliderElement(this);
     })
 })
-
 carousel();

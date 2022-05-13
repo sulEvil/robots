@@ -15,6 +15,7 @@
   &__content{
     display: flex;
     flex-direction: column;
+    height: 520px;
   }
   &__title{
     color: #303030;
@@ -40,8 +41,23 @@
     margin-top: auto;
     display: flex;
     gap: 65px;
+    justify-self: flex-end;
   }
   &__left{
     transform: rotate(180deg);
+  }
+  &__info{
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    &_active{
+
+      position: static;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.1s ease;
+      opacity: 1;
+    }
   }
 }
