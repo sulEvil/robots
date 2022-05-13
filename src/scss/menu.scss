@@ -19,13 +19,17 @@
       transform: scale(28);
     }
     .menu__burger span {
-      background: white;
+      opacity: 0;
     }
     .menu__burger:after{
       background: white;
+      transform: rotate(45deg);
+      top: 50%;
     }
     .menu__burger:before{
       background: white;
+      transform: rotate(-45deg);
+      bottom: 50%;
     }
     .icon-menu__background{
       width: 100%;
@@ -60,7 +64,7 @@
       transform: translateY(-50%);
       background: black;
       height: rem(3);
-      transition: all 0.4s ease
+      transition: all 0.3s ease;
     }
     &:after{
       content: '';
@@ -71,7 +75,7 @@
       right: 0;
       height: rem(3);
       background: black;
-      transition: all 0.4s ease
+      transition: all 0.3s ease
     }
     &::before{
       content: '';
@@ -82,7 +86,7 @@
       right: 0;
       height: rem(3);
       background: black;
-      transition: all 0.4s ease
+      transition: all 0.3s ease
     }
   }
   .icon-menu__circle:hover + .menu__burger span, .icon-menu__circle:hover + .menu__burger:after, .icon-menu__circle:hover + .menu__burger:before{
