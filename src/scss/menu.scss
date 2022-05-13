@@ -3,6 +3,7 @@
   z-index: 100;
   &__background {
     position: fixed;
+    transition: 0.3s all ease-in;
     z-index: 5;
     right: calc((var(--mrigt) / 3.05));
     top: rem(40);
@@ -11,11 +12,10 @@
     background: #1f1f23;
     border-radius: 50%;
     transform: scale(0);
-    transition: 0.5s cubic-bezier(0.01, 1.05, 0.37, 0.99);
+
   }
   &_active{
     .menu__background{
-      transition: 2.3s cubic-bezier(0.01, 1.05, 0.37, 0.99);
       transform: scale(28);
     }
     .menu__burger span {

@@ -180,9 +180,6 @@ document.addEventListener('click', function(event){
     if(event.target.closest('#slide-right')){
         mySlideLeft();
     }
-    if(event.target.closest('#about-card-1')){
-        nextSlide("about__card", "about-card");
-    }
     if(event.target.closest('#case__card-1')){
         nextSlide("case__card", "case__card");
         nextText('case__desc_text', 'case__desc_active');

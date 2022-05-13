@@ -2,6 +2,8 @@
 
 .header{
   margin-bottom: rem(40);
+  position: relative;
+  z-index: 5;
   &__container{
     @media (max-width: $preTablet){
       margin-right: 20px;

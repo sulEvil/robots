@@ -1,4 +1,7 @@
 .about{
+  & .btn{
+    align-self: flex-start;
+  }
   &__container{
     display: flex;
     gap: 12px;
@@ -6,6 +9,8 @@
   }
   &__describe{
     flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
   }
   &__title{
     font-weight: 700;
