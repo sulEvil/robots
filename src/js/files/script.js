@@ -77,6 +77,7 @@ function reset(){
     document.querySelector('html').classList.remove('lock');
     document.querySelector('.menu').classList.remove('menu_active');
     document.querySelector('.nav').classList.remove('nav_active');
+    document.querySelector('.header').classList.remove('header_active');
     unAppearMenu();
 
 }
@@ -149,6 +150,12 @@ function prevText(className, classActive){
     }
 }
 document.addEventListener('click', function(event){
+    if(event.target.closest('.header__burger') && !document.querySelector('.header').classList.contains('header_active')){
+        openMenu();
+        document.querySelector('.header').classList.add('header_active');
+    } else if(event.target.closest('.header__burger') && document.querySelector('.header').classList.contains('header_active')){
+        reset();
+    }
     if(event.target.closest('.icon-menu')){
         if(document.querySelector('html').classList.contains('lock') && document.querySelector('.nav').classList.contains('nav_active')){
             closeNav();

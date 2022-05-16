@@ -4,6 +4,49 @@
   margin-bottom: rem(40);
   position: relative;
   z-index: 5;
+  &_active{
+    z-index: 105;
+    & .header__logo{
+      display: none;
+    }
+    & .header__tel {
+      display: none;
+    }
+    & .header__burger{
+      margin-left: auto;
+    }
+    & .header__burger:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 2px;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+      }
+     & .header__burger:after{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+      }
+     & .header__burger span{
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        height: 2px;
+        left: 0;
+        right: 0;
+      }
+
+  }
   &__container{
     @media (max-width: $preTablet){
       margin-right: 20px;
@@ -13,13 +56,29 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 56px;
+    @include adaptiveValue("gap", 24, 16, 1150, 320, 1);
+    @media (max-width: 1150px){
+      align-items: center;
+    }
+
   }
   &__logo{
     cursor: pointer;
+    @include adaptiveValue("width", 377, 140);
+    @include adaptiveValue("height", 72, 27);
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
   &__nav{
-    display: flex;
+    display: none;
     justify-content: space-between;
+    @include adaptiveValue("gap", 16, 12, 1150, 320, 1);
+    @media (max-width: 1150px){
+
+    }
   }
   &__tel{
     font-size: rem(36);
@@ -29,11 +88,79 @@
     &:hover{
       transform: scale(1.1);
     }
+    @media (max-width: 1150px){
+      margin-left: auto;
+      @include adaptiveValue("height", 62, 36, 1150, 320, 1);
+      @include adaptiveValue("width", 62, 36, 1150, 320, 1);
+      border-radius: 50%;
+      border: 2px solid #A7F7F9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #A7F7F9;
+      font-weight: bold;
+      @include adaptiveValue("font-size", 36, 13, 1150, 320, 1);
+    }
+  }
+  &__tel_number{
+    @media (max-width: 1150px){
+      display: none;
+    }
+  }
+  &__icon{
+
+    @media (min-width: 1150px){
+      display: none;
+    }
   }
   &__link{
     text-transform: uppercase;
     &:hover{
       text-decoration: underline;
+    }
+  }
+  &__burger{
+    position: relative;
+    z-index: 999999;
+    @include adaptiveValue("width", 42, 35, 1150, 320, 1);
+    height: 16px;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    &:hover{
+      transform: scale(1.1);
+    }
+    @media (min-width: 1150px){
+      display: none;
+    }
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: black;
+    }
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: black;
+    }
+    span{
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: black;
+      height: 2px;
+      left: 0;
+      right: 0;
     }
   }
 }
