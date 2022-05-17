@@ -4,6 +4,10 @@
   right: 0;
   height: 990px;
   z-index: -1;
+  display: none;
+  @media (max-width: 1150px){
+    display: none;
+  }
 }
 .background_static{
   top: 990px;
@@ -17,4 +21,8 @@
   z-index: -1;
   background-size: 550px;
   min-height: 100%;
+  display: none;
+  @media (max-width: 1150px){
+    display: none;
+  }
 }

@@ -21,9 +21,6 @@ function appearMenu() {
     let worksItems = document.querySelectorAll('.menu__work-item');
     let socials = document.querySelectorAll('.menu__social');
     let infoBlock = document.querySelector('.menu__info-block');
-    menu.style.bottom = '0';
-    menu.style.paddingTop = '100px';
-    menu.style.paddingBottom = '80px';
     menuItems.forEach((item, index) => {
         setTimeout(function(){
             item.classList.add('menu__item-vis');
@@ -48,9 +45,6 @@ function unAppearMenu() {
     let worksItems = document.querySelectorAll('.menu__work-item');
     let socials = document.querySelectorAll('.menu__social');
     let infoBlock = document.querySelector('.menu__info-block');
-    menu.style.bottom = '100%';
-    menu.style.paddingTop = '0';
-    menu.style.paddingBottom = '0';
     menuItems.forEach((item, index) => {
         item.classList.remove('menu__item-vis');
     });
@@ -68,6 +62,11 @@ function openNav(){
     document.querySelector('.nav').classList.add('nav_active');
     document.querySelector('html').classList.add('lock');
 }
+function openMenuPhone(){
+    document.querySelector('html').classList.add('lock');
+    document.querySelector('.menu').classList.add('menu_active-phone');
+    setTimeout(appearMenu, 500);
+}
 function openMenu(){
     document.querySelector('html').classList.add('lock');
     document.querySelector('.menu').classList.add('menu_active');
@@ -76,6 +75,7 @@ function openMenu(){
 function reset(){
     document.querySelector('html').classList.remove('lock');
     document.querySelector('.menu').classList.remove('menu_active');
+    document.querySelector('.menu').classList.remove('menu_active-phone');
     document.querySelector('.nav').classList.remove('nav_active');
     document.querySelector('.header').classList.remove('header_active');
     unAppearMenu();
@@ -151,7 +151,7 @@ function prevText(className, classActive){
 }
 document.addEventListener('click', function(event){
     if(event.target.closest('.header__burger') && !document.querySelector('.header').classList.contains('header_active')){
-        openMenu();
+        openMenuPhone();
         document.querySelector('.header').classList.add('header_active');
     } else if(event.target.closest('.header__burger') && document.querySelector('.header').classList.contains('header_active')){
         reset();
@@ -175,7 +175,8 @@ document.addEventListener('click', function(event){
             openNav();
         }
     }
-    if(!event.target.closest('.nav__body') && !event.target.closest('.menu__body') && !event.target.closest('.nav__item_callback') && !event.target.closest('.icon-menu')){
+    // проверка, если не кнопка или body меню, то убирать лок
+    if(!event.target.closest('.header__burger') && !event.target.closest('.nav__body') && !event.target.closest('.menu__body') && !event.target.closest('.nav__item_callback') && !event.target.closest('.icon-menu')){
         document.querySelector('html').classList.remove('lock');
     }
     if(event.target.closest('.nav-body__close')){
@@ -216,10 +217,10 @@ document.addEventListener('keydown',function(event) {
     // ESCAPE key pressed
     if (event.keyCode == 27) {
         document.querySelector('html').classList.remove('lock');
+        document.querySelector('.menu').classList.remove('menu_active-phone');
+        document.querySelector('.nav').classList.remove('nav_active');
         document.querySelector('.menu').classList.remove('menu_active');
-        menu.style.bottom = '100%';
-        menu.style.paddingTop = '0';
-        menu.style.paddingBottom = '0';
+        unAppearMenu();
     }
 });
 function carousel () {
