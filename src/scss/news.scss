@@ -2,47 +2,62 @@
   &__container{
     display: flex;
     justify-content: space-between;
-    gap: 120px;
+    @include adaptiveValue("gap", 120, 40);
+    @media (max-width: $tablet){
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+    }
   }
   &__swiper{
   }
   &__description{
-    font-size: 18px;
-    line-height: 24px;
     color: #000;
-    margin-bottom: 40px;
+    @include adaptiveValue("margin-bottom", 40, 20);
+    @include adaptiveValue("font-size", 18, 14, 1920, 1150, 1);
+    line-height: 133%;
   }
   &__content{
     display: flex;
     flex-direction: column;
-    height: 520px;
+    @include adaptiveValue("height", 520, 360);
     position: relative;
   }
   &__title{
     color: #303030;
-    font-size: 78px;
     font-weight: bold;
-    line-height: 92px;
     text-transform: uppercase;
-    margin-bottom: 68px;
+    @include adaptiveValue("margin-bottom", 68, 12);
+    @include adaptiveValue("font-size", 78, 54, 1920, 1150, 1);
+    line-height: 120%;
+    @media (max-width: $tablet){
+      @include adaptiveValue("font-size", 54, 32, 1150, 320, 1);
+    }
     span {
-      font-size: 72px;
+      @include adaptiveValue("font-size", 72, 48, 1920, 1150, 1);
+      line-height: 120%;
       color: #8EE1E7;
-      line-height: 85px;
+      @media (max-width: $tablet){
+        @include adaptiveValue("font-size", 48, 30, 1150, 320, 1);
+      }
     }
   }
   &__subtitle{
-    font-size: 24px;
-    line-height: 28px;
+    @include adaptiveValue("font-size", 24, 18, 1920, 1150, 1);
+    line-height: 115%;
     text-transform: uppercase;
     color: #000;
-    margin-bottom: 16px;
+    @include adaptiveValue("margin-bottom", 16, 8);
+    @media (max-width: $tablet){
+      font-weight: bold;
+    }
+
   }
   &__arrows{
     margin-top: auto;
     display: flex;
-    gap: 65px;
     justify-self: flex-end;
+    @include adaptiveValue("gap", 65, 32);
   }
   &__left{
     transform: rotate(180deg);
@@ -53,7 +68,6 @@
     left: 0;
     top: 0;
     &_active{
-
       position: static;
       display: flex;
       flex-direction: column;

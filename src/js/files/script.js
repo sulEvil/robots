@@ -355,7 +355,6 @@ document.querySelectorAll('.cont-slider').forEach(slide => {
     })
 })
 window.addEventListener('resize',function(){
-    console.log('asddas')
     reset();
 });
 carousel();

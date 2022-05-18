@@ -1,4 +1,5 @@
 .present{
+  @include adaptiveValue("margin-bottom", 80, 10, 1150, 320, 1);
   &__more {
     align-self: flex-start;
     position: relative;
@@ -16,7 +17,11 @@
       border-radius: 50%;
       left: 0;
       bottom: -50px;
+
       box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3);
+      @media (max-width: $tablet){
+        box-shadow: none;
+      }
     }
   }
   &__inner{

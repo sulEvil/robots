@@ -1,50 +1,70 @@
 .about{
+  @media (max-width:$tablet){
+    @include adaptiveValue("margin-bottom", 80, 30);
+  }
   & .btn{
-    align-self: flex-start;
+    @media (min-width:$tablet){
+      align-self: flex-start;
+    }
   }
   &__container{
     display: flex;
-    gap: 12px;
+    @include adaptiveValue("gap", 36, 20);
     justify-content: space-between;
+    @media (max-width: $tablet){
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
   &__describe{
-    flex-basis: 50%;
     display: flex;
     flex-direction: column;
   }
   &__title{
     font-weight: 700;
-    font-size: 78px;
-    @include adaptiveValue("font-size", 78, 36);
+    @include adaptiveValue("font-size", 78, 54, 1920, 1150, 1);
     line-height: 120%;
     color: #303030;
     text-transform: uppercase;
     margin-bottom: 24px;
+    @media (max-width: $tablet){
+    @include adaptiveValue("font-size", 54, 32, 1150, 320, 1);
+    }
     span{
       color: #8EE1E7;
-      font-size: 62px;
-      line-height: 73px;
+      @include adaptiveValue("font-size", 62, 32, 1920, 1150, 1);
+      line-height: 120%;
+      @media (max-width: $tablet){
+        @include adaptiveValue("font-size", 32, 18, 1150, 320, 1);
+      }
     }
   }
   &__feature{
     position: relative;
-    padding-left: 47px;
-    margin-bottom: 24px;
+    @include adaptiveValue("padding-left", 47, 38);
+    @include adaptiveValue("margin-bottom", 24, 18);
     &:before{
       content: '';
       display: block;
       width: 26px;
+      @include adaptiveValue("width", 26, 14);
       height: 2px;
       background: black;
       position: absolute;
       left: 0;
       top: 12px;
+
     }
   }
   &__subtitle{
     color: #000000;
     font-weight: 700;
-    line-height: 24px;
+    @include adaptiveValue("font-size", 18, 14, 1920, 1150, 1);
+    line-height: 115%;
     text-transform: uppercase;
+  }
+  &__text{
+    @include adaptiveValue("font-size", 18, 14, 1920, 1150, 1);
   }
 }

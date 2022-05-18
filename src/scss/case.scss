@@ -1,34 +1,51 @@
 .case{
+  @media (max-width:$tablet){
+    @include adaptiveValue("margin-bottom", 80, 30);
+  }
   &__container{
     display: flex;
     justify-content: flex-start;
-    gap: 120px;
+    @include adaptiveValue("gap", 140, 50);
+    @media (max-width: $tablet){
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+    }
   }
   &__swiper{
   }
   &__content{
     display: flex;
-    height: 500px;
+    @include adaptiveValue("height", 500, 240);
     flex-direction: column;
+    @media (max-width: $tablet){
+      align-self: flex-start;
+    }
   }
   &__title{
     color: #303030;
-    font-size: 78px;
     font-weight: bold;
-    line-height: 92px;
     text-transform: uppercase;
-    margin-bottom: 68px;
+    @include adaptiveValue("margin-bottom", 68, 12);
+    @include adaptiveValue("font-size", 78, 54, 1920, 1150, 1);
+    line-height: 120%;
+    @media (max-width: $tablet){
+      @include adaptiveValue("font-size", 54, 32, 1150, 320, 1);
+    }
     span {
-      font-size: 72px;
+      @include adaptiveValue("font-size", 72, 48, 1920, 1150, 1);
+      line-height: 120%;
       color: #8EE1E7;
-      line-height: 85px;
+      @media (max-width: $tablet){
+        @include adaptiveValue("font-size", 48, 30, 1150, 320, 1);
+      }
     }
   }
   &__arrows{
     margin-top: auto;
     display: flex;
-    gap: 65px;
     justify-self: flex-end;
+    @include adaptiveValue("gap", 65, 32);
   }
   &__left{
     transform: rotate(180deg);
@@ -41,7 +58,7 @@
     opacity: 0;
     left: 0;
     top: 0;
-    font-size: 24px;
+    @include adaptiveValue("font-size", 24, 14);
   }
   &__desc_active{
     position: static;

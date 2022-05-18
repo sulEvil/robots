@@ -9,13 +9,20 @@
     align-items: center;
     padding-top: 64px;
     padding-bottom: 64px;
+    @media (max-width: 460px){
+      flex-direction: column;
+      justify-content: center;
+    }
   }
   &__inner-bottom{
     flex-direction: column;
+    padding: 10px 20px;
+
   }
   &__top{
     display: flex;
     align-items: center;
+    padding: 10px 10px;
   }
   &__bottom{
     background: #D2E4E7;
@@ -27,51 +34,65 @@
   }
   &__title{
     font-weight: 700;
-    font-size: 48px;
-    line-height: 56px;
     text-transform: uppercase;
     color: #303030;
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: 115%;
   }
   &__link{
     color: #8EE1E7;
   }
   &__line{
-    width: 140px;
+    @include adaptiveValue("width", 140, 30);
     height: 3px;
     background: #8EE1E7;
     border-radius: 1px;
+    @media (max-width: 960px){
+      display: none;
+    }
   }
   &__nickname{
     font-family: 'Arial';
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 41px;
     text-transform: uppercase;
     color: #303030;
     margin-left: auto;
+    @include adaptiveValue("font-size", 36, 16);
+    line-height: 115%;
+    @media (max-width: 460px){
+      margin-left: 0;
+    }
   }
   &__nav{
     display: flex;
     width: 100%;
     justify-content: space-between;
+    @media (max-width: 760px){
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+    }
   }
   &__menu{
     display: flex;
     flex-direction: column;
     gap: 6px;
+    @include adaptiveValue("gap", 6, 12, 1150, 320, 1);
   }
   &__menu-title{
     font-weight: 700;
-    line-height: 22px;
+    line-height: 130%;
+    @include adaptiveValue("font-size", 18, 16, 1150, 320, 1);
     color: #000000;
-    margin-bottom: 8px;
+    @include adaptiveValue("margin-bottom", 8, 14, 1150, 320, 1);
     text-transform: uppercase;
   }
   &__robots{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    @include adaptiveValue("gap", 10, 18, 1150, 320, 1);
   }
   &__robot{
     text-transform: uppercase;
@@ -85,8 +106,9 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 36px;
     color: #035C62;
+    @include adaptiveValue("font-size", 36, 24, 1150, 320, 1);
+    @include adaptiveValue("margin-bottim", 8, 16, 1150, 320, 1);
   }
   &__socials {
     align-self: flex-end;
@@ -102,10 +124,24 @@
   }
   &__logo{
     margin-bottom: 30px;
+    @include adaptiveValue("width", 377, 290, 1150, 320, 1);
+    @include adaptiveValue("height", 72, 41, 1150, 320, 1);
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
   }
   &__icon-top{
     cursor: pointer;
     transition: all 0.3s ease;
+    @include adaptiveValue("width", 82, 52);
+    @include adaptiveValue("height", 82, 52);
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: auto
+    }
     &:hover{
       transform: scale(1.1);
     }
