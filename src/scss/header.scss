@@ -1,7 +1,9 @@
 //====================================================================================================
 
 .header{
-  margin-bottom: rem(40);
+  @media (min-width:$tablet){
+    margin-bottom: rem(40);
+  }
   position: relative;
   z-index: 5;
   @media (max-width: 1150px){
@@ -11,6 +13,9 @@
   }
   &_active{
     z-index: 105;
+    & .header__phone-num{
+      display: none;
+    }
     & .header__logo{
       display: none;
     }
@@ -19,6 +24,9 @@
     }
     & .header__burger{
       margin-left: auto;
+    }
+    & .header__icon{
+      display: none;
     }
     & .header__burger:before{
         content: '';
@@ -61,11 +69,7 @@
     @include adaptiveValue("margin-bottom", 45, 33, 1150, 320, 1);
     @include adaptiveValue("gap", 24, 16, 1150, 320, 1);
     @media (min-width: 1150px){
-      margin-bottom: 56px;
     }
-
-
-
   }
   &__phone-num{
     font-family: 'Poppins';
@@ -103,21 +107,26 @@
     transition: 0.3s ease all;
     cursor: pointer;
     align-self: flex-start;
+  }
+  &__icon{
+    cursor: pointer;
+    transition: 0.3s ease all;
+    margin-left: auto;
+    @include adaptiveValue("height", 62, 36, 1150, 320, 1);
+    @include adaptiveValue("width", 62, 36, 1150, 320, 1);
+    border-radius: 50%;
+    border: 2px solid #A7F7F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #A7F7F9;
+    font-weight: bold;
+    @include adaptiveValue("font-size", 36, 13, 1150, 320, 1);
     &:hover{
       transform: scale(1.1);
     }
-    @media (max-width: 1150px){
-      margin-left: auto;
-      @include adaptiveValue("height", 62, 36, 1150, 320, 1);
-      @include adaptiveValue("width", 62, 36, 1150, 320, 1);
-      border-radius: 50%;
-      border: 2px solid #A7F7F9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #A7F7F9;
-      font-weight: bold;
-      @include adaptiveValue("font-size", 36, 13, 1150, 320, 1);
+    @media (min-width:$tablet){
+      display: none;
     }
   }
   &__tel_number{
@@ -126,7 +135,6 @@
     }
   }
   &__icon{
-    transition: 0.3s ease all;
     @media (min-width: 1150px){
       display: none;
     }

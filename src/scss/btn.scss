@@ -8,12 +8,12 @@
     font-size: rem(24);
     color: black;
     cursor: pointer;
+    @include adaptiveValue("font-size", 20, 16);
     &_bold{
-      font-size: rem(26);
       font-weight: bold;
+      @include adaptiveValue("font-size", 26, 14, 1150, 320, 1);
     }
   }
-
   &:hover {
     & .arrow__arrow:before{
       width: 80%;

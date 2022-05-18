@@ -15,7 +15,8 @@
   &__title{
     font-weight: 700;
     font-size: 78px;
-    line-height: 92px;
+    @include adaptiveValue("font-size", 78, 36);
+    line-height: 120%;
     color: #303030;
     text-transform: uppercase;
     margin-bottom: 24px;

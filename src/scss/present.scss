@@ -1,5 +1,4 @@
 .present{
-  padding: 118px 0 140px;
   &__more {
     align-self: flex-start;
     position: relative;
@@ -28,12 +27,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 170px 65px 146px;
+    @include adaptiveValue("padding-top", 100, 20);
+    @include adaptiveValue("padding-bottom", 65, 20);
+    @include adaptiveValue("padding-left", 170, 20);
+    @include adaptiveValue("padding-right", 146, 20);
     gap: 12px;
     transition: 0.3s ease all;
-  }
+    @media (max-width: 1150px){
+      border: 7.5px solid #8EE1E7;
+    }
+}
   &__text{
     font-size: 24px;
+    @include adaptiveValue("font-size", 24, 16);
     line-height: 150%;
     color: #000000;
     text-transform: uppercase;
@@ -44,6 +50,9 @@
     right: 45px;
     bottom: 0;
     transform: translateY(50%);
+    @media (max-width: 890px){
+      display: none;
+    }
   }
   & .btn {
     transform: translateZ(10px);

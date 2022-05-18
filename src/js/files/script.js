@@ -3,17 +3,17 @@ import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 document.addEventListener('DOMContentLoaded', function (event) {
-    document.querySelectorAll('.input__callback').forEach(function(input){
-        input.addEventListener('change', function (e) {
-            if(input.value){
-                input.parentNode.classList.add('notEmpty');
 
-            } else{
-                input.parentNode.classList.remove('notEmpty');
-            }
-        })
-    })
 }) // DOMContentLoaded EEEEEEEEEEEEEEENNNNNNNNNNNNNNNNNNNNDDDDDDDDDDDDDDDDDDDDDD
+document.querySelectorAll('.input__callback').forEach(function(input){
+    input.addEventListener('change', function (e) {
+        if(input.value){
+            input.parentNode.classList.add('notEmpty');
+        } else{
+            input.parentNode.classList.remove('notEmpty');
+        }
+    })
+})
 const menu = document.querySelector('.menu__container');
 let card = document.querySelector('.present__container');
 function appearMenu() {
@@ -176,9 +176,10 @@ document.addEventListener('click', function(event){
         }
     }
     // проверка, если не кнопка или body меню, то убирать лок
-    if(!event.target.closest('.header__burger') && !event.target.closest('.nav__body') && !event.target.closest('.menu__body') && !event.target.closest('.nav__item_callback') && !event.target.closest('.icon-menu')){
+    if(!event.target.closest('.header') && !event.target.closest('.menu__container') && !event.target.closest('.header__burger') && !event.target.closest('.nav__body') && !event.target.closest('.menu__body') && !event.target.closest('.nav__item_callback') && !event.target.closest('.icon-menu')){
         document.querySelector('html').classList.remove('lock');
     }
+
     if(event.target.closest('.nav-body__close')){
         closeNav();
     }
@@ -210,6 +211,9 @@ document.addEventListener('click', function(event){
     if(event.target.closest('.news__right')){
         nextSlide("news__card", "news-card");
         nextText('news__info', 'news__info_active');
+    }
+    if(event.target.closest('.header__icon')){
+        openNav();
     }
 })
 document.addEventListener('keydown',function(event) {
@@ -350,4 +354,8 @@ document.querySelectorAll('.cont-slider').forEach(slide => {
         selectSliderElement(this);
     })
 })
+window.addEventListener('resize',function(){
+    console.log('asddas')
+    reset();
+});
 carousel();

@@ -36,14 +36,12 @@
     .menu__nav{
       display: flex;
     }
-
-
   }
   &_active{
     .menu__container{
       bottom: 0;
-      padding-top: 100px;
       padding-bottom: 80px;
+      @include adaptiveValue("padding-top", 135, 111);
     }
     .menu__nav{
       display: flex;

@@ -1,26 +1,38 @@
 .main-catalog{
+
   &__title{
     color: rgba(194, 246, 253, 0.6);
     font-weight: 700;
     font-size: 200px;
+    @include adaptiveValue("font-size", 200, 140, 1920, 860, 1);
    // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgba(143, 143, 143, 0.52);
     user-select: none;
+    @media (max-width: 660px){
+      display: none;
+    }
   }
   &__products{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    column-gap: 20px;
+    column-gap: 30px;
     row-gap: 72px;
     margin-top: -50px;
+    @media (max-width: $tablet){
+      @include adaptiveValue("row-gap", 50, 30, 1150, 320, 1);
+    }
   }
   &__product{
     position: relative;
     color: #303030;
-    width: 450px;
-    height: 673px;
+    @include adaptiveValue("width", 450, 340, 1920, 1150, 1);
+    @include adaptiveValue("height", 673, 473, 1920, 1150, 1);
+    @media (max-width: $tablet){
+      @include adaptiveValue("width", 340, 280, 1150, 320, 1);
+      @include adaptiveValue("height", 473, 410, 1150, 320, 1);
+    }
   }
   &__subtitle{
     font-size: 36px;
@@ -55,8 +67,15 @@ html {
   -webkit-transform-style: preserve-3d;
   perspective: 1000px;
   -webkit-perspective: 1000px;
-  width: 450px;
-  height: 673px;
+  @include adaptiveValue("width", 450, 340, 1920, 1150, 1);
+  @include adaptiveValue("height", 673, 473, 1920, 1150, 1);
+  @media (max-width: $tablet){
+    @include adaptiveValue("width", 340, 280, 1150, 320, 1);
+    @include adaptiveValue("height", 473, 410, 1150, 320, 1);
+  }
+  .btn__text{
+    @include adaptiveValue("font-size", 20, 16);
+  }
 }
 
 .flip-box-front,
@@ -66,9 +85,8 @@ html {
   background-size: cover;
   background-position: center;
   border-radius: 8px;
-  width: 450px;
   padding: 50px;
-  height: 673px;
+  @include adaptiveValue("padding", 50, 20);
   background: linear-gradient(180deg, #EDF5F6 100%, rgba(234, 243, 244, 0) 107.13%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   -ms-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
@@ -76,6 +94,12 @@ html {
   -webkit-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  @include adaptiveValue("width", 450, 340, 1920, 1150, 1);
+  @include adaptiveValue("height", 673, 473, 1920, 1150, 1);
+  @media (max-width: $tablet){
+    @include adaptiveValue("width", 340, 280, 1150, 320, 1);
+    @include adaptiveValue("height", 473, 410, 1150, 320, 1);
+  }
 }
 
 .flip-box-front {
@@ -100,14 +124,18 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  width: 450px;
-  height: 673px;
   -ms-transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  @include adaptiveValue("width", 450, 340, 1920, 1150, 1);
+  @include adaptiveValue("height", 673, 473, 1920, 1150, 1);
+  @media (max-width: $tablet){
+    @include adaptiveValue("width", 340, 280, 1150, 320, 1);
+    @include adaptiveValue("height", 473, 410, 1150, 320, 1);
+  }
 }
 
 .flip-box:hover .flip-box-back {
@@ -122,10 +150,10 @@ html {
 .flip-box .inner {
   position: absolute;
   left: 0;
-  top: 0;
-  width: 450px;
-  height: 673px;
+  @include adaptiveValue("width", 450, 340, 1920, 1150, 1);
+  @include adaptiveValue("height", 673, 473, 1920, 1150, 1);
   padding: 60px;
+  @include adaptiveValue("padding", 60, 20, 1920, 1150, 1);
   outline: 1px solid transparent;
   -webkit-perspective: inherit;
   perspective: inherit;
@@ -136,9 +164,13 @@ html {
   top: 50%;
   display: flex;
   flex-direction: column;
+  @media (max-width: $tablet){
+    @include adaptiveValue("width", 340, 280, 1150, 320, 1);
+    @include adaptiveValue("height", 473, 410, 1150, 320, 1);
+  }
   img {
-    width: 186px;
-    height: 352px;
+    @include adaptiveValue("width", 186, 136);
+    @include adaptiveValue("height", 352, 302);
     object-fit: contain;
     align-self: center;
     justify-self: flex-end;
@@ -149,13 +181,13 @@ html {
   }
 }
 .flip-box-header {
-  font-size: 34px;
-  margin-bottom: 60px;
+  @include adaptiveValue("font-size", 34, 24);
+  @include adaptiveValue("margin-bottom", 60, 25);
   text-align: left;
 }
 .flip-box p {
-  font-size: 20px;
-  line-height: 1.5em;
+  line-height: 120%;
+  @include adaptiveValue("font-size", 20, 18);
 }
 .flip-box-button {
   background-color: transparent;
