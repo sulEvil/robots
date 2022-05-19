@@ -1,0 +1,18 @@
+.models-robot{
+  &__container{
+
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 73px;
+    span {
+      color: #8EE1E7;
+    }
+
+  }
+}

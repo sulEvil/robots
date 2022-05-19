@@ -1,6 +1,41 @@
 .type-robot{
   &__container{
-
+    display: flex;
+    align-items: center;
+  }
+  &__image{
+    flex-basis: 60%;
+    border-radius: 100%;
+    background: #DBF1F2;
+    position: relative;
+    &:after {
+      content: "";
+      padding-top: 100%;
+      display: block;
+    }
+    img{
+      position: absolute;
+      max-width: 100%;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      object-fit: contain;
+    }
+  }
+  &__content{
+    flex-basis: 40%;
+  }
+  &__title{
+    font-weight: 700;
+    line-height: 125%;
+    color: #000000;
+    @include adaptiveValue("font-size", 36, 22, 1920, 320, 1);
+    @include adaptiveValue("margin-bottom", 37, 10, 1920, 320, 1);
+  }
+  &__description{
+    @include adaptiveValue("font-size", 24, 18, 1920, 320, 1);
+    line-height: 150%;
+    color: #000000;
   }
 
 

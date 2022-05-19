@@ -205,6 +205,9 @@ body::-webkit-scrollbar-thumb {
 
 // тип роботы
 @import "type-of-robot/type-robot";
-
+@import "type-of-robot/models-robot";
+@import "type-of-robot/robot-model";
+@import "type-of-robot/efficiency";
+@import "type-of-robot/result";
 // Подключение стилей отдельных страниц
 @import "home";

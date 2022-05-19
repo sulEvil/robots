@@ -1,0 +1,36 @@
+.result{
+
+  &__container{
+    background: #EAF4F5;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 73px;
+    text-transform: uppercase;
+    span {
+      color: #8EE1E7;
+    }
+  }
+  &__content{
+
+    padding: 100px 100px; // 200
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  &__item{
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    span{
+      color: #8EE1E7;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.efficiency{
+  &__container{
+
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 73px;
+    text-transform: uppercase;
+    span {
+      color: #8EE1E7;
+    }
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  &__item{
+    display: flex;
+    gap: 45px;
+
+  }
+  &__icon{
+    width: 78px;
+    height: 78px;
+    flex-basis: 78px;
+    background: #0099B2;
+    border-radius: 50%;
+  }
+  &__subtitle{
+    color: #8EE1E7;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  &__describe{
+    color: #000000;
+    font-size: 24px;
+  }
+}
