@@ -1,0 +1,73 @@
+.hits{
+  &__container{
+    position: relative;
+  }
+  &__title{
+    font-weight: 700;
+    @include adaptiveValue("font-size", 200, 40, 1920, 320, 1);
+    @include adaptiveValue("margin-bottom", -60, 10, 1920, 320, 1);
+    line-height: 106.66%;
+    color: rgba(194, 246, 253, 0.6);
+    mix-blend-mode: normal;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(143, 143, 143, 0.52);
+    white-space: nowrap;
+  }
+  &__slider{
+
+  }
+  &__arrow{
+    position: absolute;
+    top: 60%;
+  }
+  &__left{
+    left: 10%;
+    transform: rotate(180deg);
+    @media (min-width:1600px){
+     left: -5%;
+    }
+    @media (min-width:1150px){
+      left: 2%;
+    }
+    @media (max-width: 1150px){
+      display: none;
+    }
+  }
+  &__right{
+    right: 10%;
+    @media (min-width:1600px){
+      right: 20%;
+    }
+    @media (min-width:1150px){
+      right: 12%;
+    }
+    @media (max-width: 1150px){
+      display: none;
+    }
+  }
+  &__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__image{
+    width: 130px;
+    height: 304px;
+    margin-bottom: 12px;
+    img{
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__robot-name{
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+  }
+  &__robot-describe{
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+  }
+}

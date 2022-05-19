@@ -189,13 +189,7 @@ document.addEventListener('click', function(event){
     if(event.target.closest('#slide-right')){
         mySlideLeft();
     }
-    if(event.target.closest('#case__card-1')){
-        nextSlide("case__card", "case__card");
-        nextText('case__desc_text', 'case__desc_active');
-    }
-    if(event.target.closest('#news-card-1')){
-        nextSlide("news__card", "news-card");
-    }
+
     if(event.target.closest('.case__left')){
         prevSlide("case__card", "case__card");
         prevText('case__desc_text', 'case__desc_active');

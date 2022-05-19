@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Autoplay } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -27,33 +27,30 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.hits__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		new Swiper('.hits__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation],
+			modules: [Navigation, Autoplay],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
+			slidesPerView: 4,
 			spaceBetween: 0,
-			autoHeight: true,
 			speed: 800,
-
+			loop: true,
 			//touchRatio: 0,
 			//simulateTouch: false,
 			//loop: true,
 			//preloadImages: false,
 			//lazy: true,
-
-			/*
 			// Эффекты
 			effect: 'fade',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
-			*/
+
 
 			// Пагинация
 			/*
@@ -73,10 +70,60 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.hits__left',
+				nextEl: '.hits__right',
 			},
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
 
+				},
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+
+				},
+				420: {
+					slidesPerView: 2,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				600: {
+					slidesPerView: 3,
+					spaceBetween: 0,
+					autoHeight: true,
+					autoplay: {
+						delay: 1200,
+						disableOnInteraction: false,
+					},
+				},
+				900: {
+					slidesPerView: 4,
+					spaceBetween: 0,
+					autoHeight: true,
+					autoplay: {
+						delay: 1500,
+						disableOnInteraction: false,
+					},
+				},
+				1150: {
+					slidesPerView: 4,
+					spaceBetween: 0,
+					autoHeight: true,
+					autoplay: {
+						delay: 2000,
+						disableOnInteraction: false,
+					},
+				},
+				1920: {
+					slidesPerView: 4,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+			},
 			// Брейкпоинты
 			/*
 			breakpoints: {

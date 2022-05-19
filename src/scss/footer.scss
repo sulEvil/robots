@@ -74,6 +74,9 @@
       align-items: center;
       gap: 24px;
     }
+    @media (max-width: 560px){
+      align-items: flex-start;
+    }
   }
   &__menu{
     display: flex;

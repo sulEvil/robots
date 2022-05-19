@@ -72,6 +72,7 @@
 }
 #case__card-{
   &1{
+    cursor: pointer;
     transform: translate(80px, 80px);
     background: #D2E4E7;
     z-index: 3;
@@ -103,6 +104,7 @@
 }
 #news-card-{
   &1{
+    cursor: pointer;
     transform: translate(80px, 80px);
     background: #D2E4E7;
     z-index: 3;

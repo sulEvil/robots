@@ -1,0 +1,23 @@
+.catalog{
+  @include adaptiveValue("margin-top", -160, -20, 1920, 320, 1);
+  margin-bottom: 12px;
+  &__container{}
+  &__title{
+    font-weight: 700;
+    @include adaptiveValue("font-size", 200, 60, 1920, 320, 1);
+    @include adaptiveValue("margin-bottom", 0, 32, 1920, 320, 1);
+    line-height: 106.66%;
+    color: rgba(194, 246, 253, 0.6);
+    mix-blend-mode: normal;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(143, 143, 143, 0.52);
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 60, 20);
+    @media (min-width:1400px){
+      padding-left: 110px;
+    }
+  }
+}
