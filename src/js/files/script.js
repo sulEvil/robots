@@ -16,6 +16,12 @@ document.querySelectorAll('.input__callback').forEach(function(input){
 })
 const menu = document.querySelector('.menu__container');
 let card = document.querySelector('.present__container');
+function smoothJumpUp() {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        window.scrollBy(0,-50);
+        setTimeout(smoothJumpUp, 6);
+    }
+}
 function appearMenu() {
     let menuItems = document.querySelectorAll('.menu__item');
     let worksItems = document.querySelectorAll('.menu__work-item');
@@ -150,6 +156,9 @@ function prevText(className, classActive){
     }
 }
 document.addEventListener('click', function(event){
+    if(event.target.closest('.footer__icon-top')){
+        smoothJumpUp();
+    }
     if(event.target.closest('.header__burger') && !document.querySelector('.header').classList.contains('header_active')){
         openMenuPhone();
         document.querySelector('.header').classList.add('header_active');
@@ -343,6 +352,7 @@ function selectSliderElement(e) {
             }
     }
 }
+
 document.querySelectorAll('.cont-slider').forEach(slide => {
     slide.addEventListener('click', function (e){
         selectSliderElement(this);
