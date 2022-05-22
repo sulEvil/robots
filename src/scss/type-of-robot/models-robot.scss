@@ -4,12 +4,12 @@
   }
   &__title{
     font-weight: 700;
-    font-size: 64px;
-    line-height: 75px;
+    @include adaptiveValue("font-size", 64,32, 1920, 320, 1);
+    line-height: 115%;
     text-align: center;
     text-transform: uppercase;
     color: black;
-    margin-bottom: 73px;
+    @include adaptiveValue("margin-bottom", 73, 40, 1920, 320, 1);
     span {
       color: #8EE1E7;
     }

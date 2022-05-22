@@ -4,12 +4,12 @@
   }
   &__title{
     font-weight: 700;
-    font-size: 64px;
-    line-height: 75px;
+    @include adaptiveValue("font-size", 64, 32, 1920, 320, 1);
+    line-height: 115%;
     text-align: center;
     text-transform: uppercase;
     color: black;
-    margin-bottom: 73px;
+    @include adaptiveValue("margin-bottom", 73, 40, 1920, 320, 1);
     text-transform: uppercase;
     span {
       color: #8EE1E7;
@@ -22,25 +22,36 @@
   }
   &__item{
     display: flex;
-    gap: 45px;
-
+    @include adaptiveValue("gap", 45, 20, 1920,320, 1);
   }
   &__icon{
-    width: 78px;
-    height: 78px;
-    flex-basis: 78px;
+    @include adaptiveValue("width", 78, 38, 1920, 320, 1);
+    @include adaptiveValue("height", 78, 38, 1920, 320, 1);
+    @include adaptiveValue("padding", 0, 8, 1920, 320, 1);
     background: #0099B2;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    img{
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  &__info{
+    flex: 1 1 auto;
   }
   &__subtitle{
     color: #8EE1E7;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 24px;
+    @include adaptiveValue("font-size", 24, 16, 1920, 320, 1);
+    @include adaptiveValue("margin-bottom", 24, 14, 1920, 320, 1);
   }
   &__describe{
     color: #000000;
-    font-size: 24px;
+    @include adaptiveValue("font-size", 24, 16, 1920, 320, 1);
   }
 }

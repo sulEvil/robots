@@ -42,9 +42,12 @@ function appearMenu() {
             item.classList.add('menu__social-vis');
         }, index * 100);
     });
-    setTimeout(function(){
-        infoBlock.classList.add('menu__info-block-vis')
-    }, 100);
+    if(document.querySelector('.menu__info-block')){
+        setTimeout(function(){
+            infoBlock.classList.add('menu__info-block-vis')
+        }, 100); 
+    }
+    
 }
 function unAppearMenu() {
     let menuItems = document.querySelectorAll('.menu__item');
@@ -60,9 +63,12 @@ function unAppearMenu() {
     socials.forEach((item, index) => {
         item.classList.remove('menu__social-vis');
     });
-    setTimeout(function(){
-        infoBlock.classList.remove('menu__info-block-vis')
-    }, 100);
+    if(document.querySelector('.menu__info-block-vis')){
+        setTimeout(function(){
+            infoBlock.classList.remove('menu__info-block-vis')
+        }, 100);
+    }
+   
 }
 function openNav(){
     document.querySelector('.nav').classList.add('nav_active');
@@ -79,11 +85,28 @@ function openMenu(){
     setTimeout(appearMenu, 500);
 }
 function reset(){
-    document.querySelector('html').classList.remove('lock');
-    document.querySelector('.menu').classList.remove('menu_active');
-    document.querySelector('.menu').classList.remove('menu_active-phone');
-    document.querySelector('.nav').classList.remove('nav_active');
-    document.querySelector('.header').classList.remove('header_active');
+    if(document.querySelector('.lock')){
+        document.querySelector('html').classList.remove('lock');
+    }
+    if(document.querySelector('.menu_active')){
+        document.querySelector('.menu').classList.remove('menu_active');
+    }
+    
+    if(document.querySelector('.menu_active-phone')){
+        document.querySelector('.menu').classList.remove('menu_active-phone');
+    }
+    if(document.querySelector('.nav_active')){
+        document.querySelector('.nav').classList.remove('nav_active');
+    }
+    if(document.querySelector('.header_active')){
+        document.querySelector('.header').classList.remove('header_active');
+    }
+
+
+
+    
+    
+    
     unAppearMenu();
 
 }
@@ -361,4 +384,6 @@ document.querySelectorAll('.cont-slider').forEach(slide => {
 window.addEventListener('resize',function(){
     reset();
 });
-carousel();
+if(document.getElementById('slider-cont')){
+    carousel();
+}

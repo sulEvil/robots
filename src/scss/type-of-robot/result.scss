@@ -5,20 +5,22 @@
   }
   &__title{
     font-weight: 700;
-    font-size: 64px;
-    line-height: 75px;
+    @include adaptiveValue("font-size", 64,32, 1920, 320, 1);
+    line-height: 115%;
     text-align: center;
     text-transform: uppercase;
     color: black;
-    margin-bottom: 73px;
+    @include adaptiveValue("margin-bottom", 73, 40, 1920, 320, 1);
     text-transform: uppercase;
     span {
       color: #8EE1E7;
     }
   }
   &__content{
-
-    padding: 100px 100px; // 200
+    @include adaptiveValue("padding-left", 100, 10, 1920, 320, 1);
+    @include adaptiveValue("padding-right", 100, 10, 1920, 320, 1);
+    @include adaptiveValue("padding-top", 100, 20, 1920, 320, 1);
+    @include adaptiveValue("padding-bottom", 100, 20, 1920, 320, 1);
   }
   &__list{
     display: flex;
@@ -26,8 +28,8 @@
     gap: 28px;
   }
   &__item{
-    font-size: 24px;
-    line-height: 28px;
+    @include adaptiveValue("font-size", 24, 16, 1920, 320, 1);
+    line-height: 115%;
     text-transform: uppercase;
     span{
       color: #8EE1E7;

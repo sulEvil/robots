@@ -2,16 +2,26 @@
   &__container{
     display: flex;
     align-items: center;
+    @media (max-width:860px){
+      flex-direction: column;
+      gap: 20px;
+    }
   }
   &__image{
     flex-basis: 60%;
     border-radius: 100%;
     background: #DBF1F2;
     position: relative;
+    @media (max-width:860px){
+      flex-basis: 100%;
+    }
     &:after {
       content: "";
       padding-top: 100%;
       display: block;
+      @media (max-width:860px){
+        padding-top: 0;
+      }
     }
     img{
       position: absolute;
@@ -20,6 +30,10 @@
       top: 50%;
       left: 50%;
       object-fit: contain;
+      @media (max-width:860px){
+        position: static;
+        transform: translate(0, 0);
+      }
     }
   }
   &__content{

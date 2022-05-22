@@ -1,0 +1,23 @@
+.page-header {
+    background: center / cover no-repeat url('@img/common/page-header.png');
+    @include adaptiveValue("margin-bottom", 70, 30, 1920, 320, 1);
+    // .page-header__container
+    &__container {
+        @include adaptiveValue("padding-top", 240, 60, 1920, 320, 1);
+        @include adaptiveValue("padding-bottom", 60, 20, 1920, 320, 1);
+    }
+    // .page-header__title
+    &__title {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 48, 32, 1920, 320, 1);
+        line-height: 115%;
+        text-transform: uppercase;
+        color: #303030;
+        &_news{
+            font-weight: 700;
+            @include adaptiveValue("font-size", 40, 26, 1920, 320, 1);
+            line-height: 115%;
+            color: #303030;
+        }
+    }
+}

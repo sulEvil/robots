@@ -1,0 +1,47 @@
+.robot {
+    background: #EAFEFF;
+    // .robot__container
+    &__container { 
+        display: flex;
+        justify-content: space-between;
+        @include adaptiveValue("gap", 60, 30);
+        @include adaptiveValue("padding-top", 80, 30, 1920, 320, 1);
+        padding-bottom: 0;
+        @media (max-width: 760px){
+            flex-direction: column;
+        }
+    }
+    // .robot__info
+    &__info {
+        flex-basis: 50%;
+
+    }
+    // .robot__subtitle
+    &__subtitle {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 36, 28, 1920, 320, 1);
+        margin-bottom: rem(20);
+
+    }
+    // .robot__title
+    &__title {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 36, 28, 1920, 320, 1);
+        margin-bottom: rem(26);
+    }
+    // .robot__describe
+    &__describe {
+        @include adaptiveValue("font-size", 24, 18, 1920, 320, 1);
+    }
+    // .robot__image
+    &__image {
+        @media (max-width: 760px){
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+}

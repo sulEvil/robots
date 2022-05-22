@@ -163,7 +163,6 @@ function initSliders() {
 			slidesPerView: 2,
 			spaceBetween: 38,
 			speed: 800,
-			loop: true,
 			//touchRatio: 0,
 			//simulateTouch: false,
 			//loop: true,
@@ -202,42 +201,42 @@ function initSliders() {
 				0: {
 					slidesPerView: 1,
 					spaceBetween: 0,
-					autoHeight: true,
+					autoHeight: false,
 
 				},
 				320: {
 					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
+					spaceBetween: 15,
+					autoHeight: false,
 
 				},
 				420: {
-					slidesPerView: 2,
-					spaceBetween: 0,
-					autoHeight: true,
+					slidesPerView: 1,
+					spaceBetween: 15,
+					autoHeight: false,
 				},
-				600: {
-					slidesPerView: 3,
-					spaceBetween: 37,
-					autoHeight: true,
+				640: {
+					slidesPerView: 2,
+					spaceBetween: 25,
+					autoHeight: false,
 					autoplay: {
 						delay: 1200,
 						disableOnInteraction: false,
 					},
 				},
 				900: {
-					slidesPerView: 3,
-					spaceBetween: 37,
-					autoHeight: true,
+					slidesPerView: 2,
+					spaceBetween: 30,
+					autoHeight: false,
 					autoplay: {
 						delay: 1500,
 						disableOnInteraction: false,
 					},
 				},
-				1150: {
+				1340: {
 					slidesPerView: 3,
-					spaceBetween: 37,
-					autoHeight: true,
+					spaceBetween: 35,
+					autoHeight: false,
 					autoplay: {
 						delay: 2000,
 						disableOnInteraction: false,
@@ -245,8 +244,8 @@ function initSliders() {
 				},
 				1920: {
 					slidesPerView: 3,
-					spaceBetween: 37,
-					autoHeight: true,
+					spaceBetween: 35,
+					autoHeight: false,
 				},
 			},
 			// Брейкпоинты

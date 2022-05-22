@@ -1,0 +1,30 @@
+.news-current {
+    // .news-current__container
+    &__container {
+        
+    }
+    // .news-current__image
+    &__image {
+        width: 70%;
+        @media (max-width: 1150px){
+            width: 100%;
+        }
+        @include adaptiveValue("margin-bottom", 42, 26, 1920, 320, 1);
+        img{
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+    }
+    // .news-current__describe
+    &__describe {
+        width: 70%;
+        font-weight: 400;
+        @include adaptiveValue("font-size", 20, 16, 1920, 320, 1);
+        line-height: 115%;
+        color: #303030;
+        @media (max-width: 1150px){
+            width: 100%;
+        }
+    }
+}

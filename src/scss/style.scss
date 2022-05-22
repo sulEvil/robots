@@ -198,6 +198,7 @@ body::-webkit-scrollbar-thumb {
 @import "videos";
 @import "news";
 @import "feedback";
+@import "page-header";
 // каталог
 @import "catalog/catalog";
 @import "catalog/item-catalog";
@@ -209,5 +210,13 @@ body::-webkit-scrollbar-thumb {
 @import "type-of-robot/robot-model";
 @import "type-of-robot/efficiency";
 @import "type-of-robot/result";
+
+// новости
+@import "news/news-list";
+@import "news-current";
+// роботы
+@import "robot";
+
+
 // Подключение стилей отдельных страниц
 @import "home";
