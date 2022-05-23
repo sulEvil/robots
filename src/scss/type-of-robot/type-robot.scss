@@ -46,12 +46,9 @@
     @include adaptiveValue("font-size", 36, 22, 1920, 320, 1);
     @include adaptiveValue("margin-bottom", 37, 10, 1920, 320, 1);
   }
-  &__description{
+  &__description {
     @include adaptiveValue("font-size", 24, 18, 1920, 320, 1);
     line-height: 150%;
     color: #000000;
   }
-
-
-
 }

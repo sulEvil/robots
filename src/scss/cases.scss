@@ -1,0 +1,47 @@
+.cases{
+  &__container{
+
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &__case{
+
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  &__image {
+    img{
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+  &__video{
+    img{
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+  &__info{
+
+  }
+  &__title{
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #303030;
+    max-width: 50%;
+  }
+  &__describe{
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+  }
+}
