@@ -5,16 +5,23 @@
   &__list{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    @include adaptiveValue("gap", 40, 28, 1920, 320, 1);
+
   }
   &__case{
-
+    @media (max-width: 560px){
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
   &__header{
     display: flex;
     justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 40px;
+    @include adaptiveValue("gap", 40, 28, 1920, 320, 1);
+    @include adaptiveValue("margin-bottom", 40, 28, 1920, 320, 1);
+    @media (max-width: 560px){
+      flex-direction: column;
+    }
   }
   &__image {
     img{
@@ -32,16 +39,19 @@
 
   }
   &__title{
-    margin-bottom: 30px;
+    @include adaptiveValue("margin-bottom", 30, 20, 1920, 320, 1);
     font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
+    @include adaptiveValue("font-size", 20, 18, 1920, 320, 1);
+    line-height: 115%;
     color: #303030;
     max-width: 50%;
+    @media (max-width: 600px){
+      max-width: 100%;
+    }
   }
   &__describe{
-    font-size: 16px;
-    line-height: 19px;
+    @include adaptiveValue("font-size", 16, 14, 1920, 320, 1);
+    line-height: 115%;
     color: #000000;
   }
 }
