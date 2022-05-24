@@ -21,6 +21,7 @@
     @include adaptiveValue("margin-bottom", 40, 28, 1920, 320, 1);
     @media (max-width: 560px){
       flex-direction: column;
+
     }
   }
   &__image {
